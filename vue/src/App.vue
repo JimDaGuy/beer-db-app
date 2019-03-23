@@ -24,20 +24,18 @@ export default {
 </script>
 
 <style>
-
-
-
-
 #app {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-
 html {
-  
 }
 
 body {
   min-width: 350px;
+}
+
+header {
+  min-height: 200px;
 }
 </style>

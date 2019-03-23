@@ -1,6 +1,5 @@
 <template>
   <div id="search">
-
     <div class="search-wrapper">
       <input
         class="search-input"
@@ -10,10 +9,10 @@
         placeholder="   Search For A Beer Name..."
       >
     </div>
-    
+
     <!--Attempting to port over -->
     <div class="results-wrapper">
-	<div v-if="recipes.length >= 1 && searchTerm.length >= 3">Showing results for {{searchTerm}}</div>
+      <div v-if="recipes.length >= 1 && searchTerm.length >= 3">Showing results for {{searchTerm}}</div>
       <div class="result" v-for="recipe in recipes" v-bind:key="recipe.BeerID">
         <div class="result-info-container">
           <span class="result-name">
@@ -24,10 +23,10 @@
             <b>Style:</b>
             {{recipe.Style}}
           </span>
-		  <span class="result-abv">
-                <b>ABV:</b>
-                {{recipe.ABV}}
-              </span>
+          <span class="result-abv">
+            <b>ABV:</b>
+            {{recipe.ABV}}
+          </span>
           <ui-button class="result-button" @click="showBeerInfo(recipe)">More Info & Comments</ui-button>
         </div>
         <div class="result-image-container">
@@ -47,7 +46,7 @@
       <ui-button class="prev-page" @click="changePage(false)" v-if="pageNum > 1">Previous Page</ui-button>
       <ui-button class="next-page" @click="changePage(true)" v-if="recipes.length === 5">Next Page</ui-button>
     </div>
-    <ui-modal ref="beerInfoModal" title="Beer Info">
+    <ui-modal ref="beerInfoModal" class="beer-modal" color="accent" title="Beer Info">
       <span class="beer-info-name">
         <b>Name:</b>
         {{selectedRecipe.Name || ''}}
@@ -79,7 +78,7 @@
       <a :href="externalURL + selectedRecipe.URL" target="_blank">
         <span class="beer-info-external">External URL</span>
       </a>
-      <img class="result-image" style="width: 10%" :src="this.imageURL + selectedRecipe.Color">
+      <img class="result-image" :src="this.imageURL + selectedRecipe.Color">
       <div class="comments-container">
         <h2 class="comment-header">Comments</h2>
         <div class="comment-container" v-for="comment in comments" v-bind:key="comment._id">
@@ -234,7 +233,6 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css?family=Pacifico");
 
-
 .search-wrapper {
   width: 100%;
   height: auto;
@@ -248,7 +246,6 @@ export default {
   margin-left: 5%;
   font-size: 20px;
   clear: both;
-
 }
 
 .search-input {
@@ -261,13 +258,11 @@ export default {
   font-size: 150%;
 }
 
-
 .results-wrapper {
   width: 60%;
   margin: 10px auto;
   margin-right: 20%;
   margin-bottom: 3%;
-
 }
 
 .result {
@@ -278,11 +273,15 @@ export default {
   display: flex;
   align-items: flex-start;
   background-color: white;
-  color: #43464B;
+  color: #43464b;
 }
 
 .result-info-container {
   width: calc(100% - 150px);
+}
+
+.beer-modal {
+  color: black;
 }
 
 .result-name {
@@ -317,6 +316,7 @@ export default {
 
 .result-image {
   height: auto;
+  width: 100%;
   background-color: white;
   border-radius: 50%;
 }

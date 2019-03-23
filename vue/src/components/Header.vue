@@ -1,16 +1,16 @@
 <template>
-	<div id="Header">
-		    <h1 class="title">Open Beer Database</h1>
-	</div>	
+  <div id="Header">
+    <h1 class="title">Open Beer Database</h1>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Header",
   data() {
-  	return {}
+    return {};
   }
- };
+};
 </script>
 
 <style>
@@ -20,12 +20,8 @@ export default {
   font-family: "Arimo";
   font-style: italic;
   color: rgb(98, 198, 165);
-  font-size: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 10em;
+  font-size: 4em;
   text-align: center;
+  line-height: 55px;
 }
-
-
 </style>
