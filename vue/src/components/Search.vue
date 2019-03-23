@@ -10,9 +10,10 @@
         placeholder="   Search For A Beer Name..."
       >
     </div>
-    <div v-if="recipes.length >= 1 && searchTerm.length >= 3">Showing results for {{searchTerm}}</div>
+    
     <!--Attempting to port over -->
     <div class="results-wrapper">
+	<div v-if="recipes.length >= 1 && searchTerm.length >= 3">Showing results for {{searchTerm}}</div>
       <div class="result" v-for="recipe in recipes" v-bind:key="recipe.BeerID">
         <div class="result-info-container">
           <span class="result-name">
