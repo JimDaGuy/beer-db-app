@@ -75,7 +75,7 @@
       <a :href="externalURL + selectedRecipe.URL" target="_blank">
         <span class="beer-info-external">External URL</span>
       </a>
-      <img class="result-image" :src="this.imageURL + selectedRecipe.Color">
+      <img class="result-image" style="width: 10%" :src="this.imageURL + selectedRecipe.Color">
       <div class="comments-container">
         <h2 class="comment-header">Comments</h2>
         <div class="comment-container" v-for="comment in comments" v-bind:key="comment._id">
@@ -307,7 +307,6 @@ export default {
 }
 
 .result-image {
-  width: 10%;
   height: auto;
   background-color: white;
   border-radius: 50%;
