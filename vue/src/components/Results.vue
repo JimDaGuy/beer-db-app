@@ -11,6 +11,10 @@
                 <b>Style:</b>
                 {{recipe.Style}}
               </span>
+			  <span class="result-abv">
+                <b>ABV:</b>
+                {{recipe.abv}}
+              </span>
               <ui-button class="result-button" @click="showBeerInfo(recipe)">More Info & Comments</ui-button>
             </div>
             <div class="result-image-container">

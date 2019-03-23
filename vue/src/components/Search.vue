@@ -24,6 +24,10 @@
             <b>Style:</b>
             {{recipe.Style}}
           </span>
+		  <span class="result-abv">
+                <b>ABV:</b>
+                {{recipe.ABV}}
+              </span>
           <ui-button class="result-button" @click="showBeerInfo(recipe)">More Info & Comments</ui-button>
         </div>
         <div class="result-image-container">
@@ -291,10 +295,15 @@ export default {
   clear: left;
 }
 
+.result-abv {
+  float: left;
+  clear: left;
+}
+
 .result-button {
   float: left;
   clear: left;
-  margin: 10px;
+  position: relative;
 }
 
 .result-image-container {
