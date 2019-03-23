@@ -83,7 +83,7 @@
         </div>
         <div v-if="comments.length < 1">No comments found for this beer. You can leave the first!</div>
         <input class="comment-input" type="text" v-model="currentComment" placeholder="Comment...">
-        <ui-button @click="submitComment">Submit</ui-button>
+        <ui-button @click="submitComment" style="padding: 20px">Submit</ui-button>
       </div>
     </ui-modal>
   </div>
@@ -348,10 +348,10 @@ export default {
 .comments-container {
   margin-left: 5%;
   margin-bottom: 2%;
+  margin-right: 5%;
 }
 
 .comment-container {
-
   height: 20px;
   border: 1px solid gray;
   white-space: nowrap;
